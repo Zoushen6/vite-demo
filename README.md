@@ -9,12 +9,14 @@
 - [Es6+](http://es6.ruanyifeng.com/) - Familiar with es6 basic syntax
 
 ## 项目运行
+
 - pnpm i
 
 - pnpm run dev
 
 
 ## 代码提交
+
 - git add .
 - git cz
 - git push
@@ -22,3 +24,7 @@
 快捷方法: npm run git  
 
 详情见package.json script标签配置
+
+## 打包构建
+
+- pnpm run build
