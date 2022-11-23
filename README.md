@@ -14,16 +14,15 @@
 
 - pnpm run dev
 
-
 ## 代码提交
 
 - git add .
 - git cz
 - git push
 
-快捷方法: npm run git  
+快捷方法: npm run git
 
-详情见package.json script标签配置
+详情见 package.json script 标签配置
 
 ## 打包构建
 

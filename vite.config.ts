@@ -1,18 +1,18 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 // @ts-ignore
-import { createVitePlugins } from './build/plugin'
-import type { UserConfig, ConfigEnv } from 'vite' // eslint-disable-line
+import { createVitePlugins } from './build/plugin';
+import type { UserConfig, ConfigEnv } from 'vite'; // eslint-disable-line
 
 /*
  * commenJS导入path
  * const path = require("path") 只适合vite3.0以下版本
  */
-import path from 'path'
+import path from 'path';
 
-export default defineConfig(({ command, mode }:ConfigEnv):UserConfig => {
-  const isBuild = Boolean!(command === 'build')
-  console.log(`command:${command}`)
-  console.log(`mode:${mode}`)
+export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
+  const isBuild = Boolean!(command === 'build');
+  console.log(`command:${command}`);
+  console.log(`mode:${mode}`);
   return {
     // base: './',
 
@@ -35,7 +35,7 @@ export default defineConfig(({ command, mode }:ConfigEnv):UserConfig => {
     resolve: {
       // 配置路径别名
       alias: { '@': path.resolve(__dirname, './src') },
-      dedupe: ['vue']
+      dedupe: ['vue'],
     },
     build: {
       rollupOptions: {
@@ -44,8 +44,8 @@ export default defineConfig(({ command, mode }:ConfigEnv):UserConfig => {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
-        }
+        },
       },
-    }
-  }
-})
+    },
+  };
+});

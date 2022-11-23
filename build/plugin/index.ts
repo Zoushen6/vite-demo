@@ -1,21 +1,20 @@
 import { PluginOption } from 'vite';
-import vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
+import vue from '@vitejs/plugin-vue';
+import Components from 'unplugin-vue-components/vite';
+import { VantResolver } from 'unplugin-vue-components/resolvers';
 
-import { configSvgIconsPlugin } from './svgIcon'
+import { configSvgIconsPlugin } from './svgIcon';
 
-export function createVitePlugins( isBuild: boolean) {
-
+export function createVitePlugins(isBuild: boolean) {
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // have to
     vue(),
     Components({
-      resolvers: [VantResolver()]
+      resolvers: [VantResolver()],
     }),
   ];
 
-  vitePlugins.push(configSvgIconsPlugin())
+  vitePlugins.push(configSvgIconsPlugin());
 
-  return vitePlugins
+  return vitePlugins;
 }
