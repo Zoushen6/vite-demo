@@ -4,6 +4,12 @@ import { ref } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+const array = [1, 2, 3]
+const ob = {
+  a: 1,
+  b: 'aaa',
+  c: 123
+}
 
 </script>
 
