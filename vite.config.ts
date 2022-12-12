@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 // @ts-ignore
 import { createVitePlugins } from './build/plugin';
 import type { UserConfig, ConfigEnv } from 'vite'; // eslint-disable-line
+import { loadEnv } from 'vite';
 
 /*
  * commenJS导入path
@@ -13,10 +14,13 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const isBuild = Boolean!(command === 'build');
   console.log(`command:${command}`);
   console.log(`mode:${mode}`);
+  const root = process.cwd();
+  const env = loadEnv(mode, root);
+  // The boolean type read by loadEnv is a string. This function can be converted to boolean type
   return {
     // base: './',
 
-    plugins: createVitePlugins(isBuild),
+    plugins: createVitePlugins(isBuild, env),
     server: {
       host: '0.0.0.0',
       port: 3200,
