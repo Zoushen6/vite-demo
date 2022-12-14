@@ -1,5 +1,8 @@
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { ref } from "vue";
+  import { message } from "ant-design-vue";
+  import { testStore } from "@/store/testStore";
+  const store = testStore();
 
   defineProps<{ msg: string }>();
 
@@ -9,8 +12,16 @@
   console.log(array);
   const ob = {
     a: 1,
-    b: 'aaa',
+    b: "aaa",
     c: 123,
+  };
+
+  const testAnt = () => {
+    message.error("This is an error message");
+    store.$patch({
+      id: "123456",
+      name: "zoushen",
+    });
   };
 </script>
 
@@ -24,7 +35,29 @@
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
   </div>
-  <img src="/src/assets/baobao.png" />
+  <img @click="testAnt" src="/src/assets/baobao.png" />
+  <div>
+    <span>{{ store.id }}，{{ store.name }}</span>
+    <a-button
+      @click="
+        () => {
+          store.$patch({
+            id: '123456',
+            name: 'zoushen',
+          });
+        }
+      "
+      >修改store</a-button
+    >
+    <a-button
+      @click="
+        () => {
+          store.$reset();
+        }
+      "
+      >重置store</a-button
+    >
+  </div>
 </template>
 
 <style scoped>

@@ -1,13 +1,13 @@
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 // https://vitejs.dev/config/
-import path from 'path';
+import path from "path";
 
 export function configSvgIconsPlugin() {
   const plugin = createSvgIconsPlugin({
     // 指定需要缓存的图标文件夹
-    iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+    iconDirs: [path.resolve(process.cwd(), "src/assets/icons")],
     // 指定symbolId格式
-    symbolId: 'icon-[dir]-[name]',
+    symbolId: "icon-[dir]-[name]",
 
     /**
      * 自定义插入位置

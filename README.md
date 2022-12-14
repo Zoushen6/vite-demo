@@ -7,10 +7,11 @@
 - [Vue3](https://v3.vuejs.org/) - Familiar with Vue basic syntax
 - [TypeScript](https://www.typescriptlang.org/) - Familiar with the basic syntax of `TypeScript`
 - [Es6+](http://es6.ruanyifeng.com/) - Familiar with es6 basic syntax
-  ### pnpm安装
+  ### pnpm 安装
   - npm install pnpm -g
-  - pnpm config set registry https://registry.npmmirror.com/   切换淘宝源
-  - pnpm config get registry    查看源
+  - pnpm config set registry https://registry.npmmirror.com/ 切换淘宝源
+  - pnpm config get registry 查看源
+
 ## 项目运行
 
 - pnpm i
