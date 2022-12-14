@@ -1,7 +1,8 @@
 import { createApp } from "vue";
-import "./style.css";
+import "./assets/css/style.css";
 import App from "./App.vue";
 import "ant-design-vue/dist/antd.css";
+import "@/assets/css/index.less";
 import router from "./router";
 const app = createApp(App);
 import { Button } from "ant-design-vue";

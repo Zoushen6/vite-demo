@@ -17,7 +17,7 @@
   };
 
   const testAnt = () => {
-    message.error("This is an error message");
+    message.success("Test Message");
     store.$patch({
       id: "123456",
       name: "zoushen",
@@ -36,9 +36,10 @@
     </p>
   </div>
   <img @click="testAnt" src="/src/assets/baobao.png" />
-  <div>
+  <div class="m-t-15 box">
     <span>{{ store.id }}，{{ store.name }}</span>
     <a-button
+      class="m-l-15"
       @click="
         () => {
           store.$patch({
@@ -50,6 +51,7 @@
       >修改store</a-button
     >
     <a-button
+      class="m-l-15"
       @click="
         () => {
           store.$reset();
@@ -60,12 +62,17 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
   .read-the-docs {
     color: #888;
   }
   img {
     width: 600px;
     height: 300px;
+  }
+  .box {
+    span {
+      color: pink;
+    }
   }
 </style>
