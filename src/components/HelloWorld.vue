@@ -30,7 +30,10 @@
       sex: "1",
     },
   });
-  const searchEvent = () => {};
+  const show = ref(true);
+  const searchEvent = () => {
+    show.value = false;
+  };
   const resetEvent = () => {};
 </script>
 
@@ -80,7 +83,7 @@
           <vxe-input v-model="data.nickname" placeholder="请输入昵称" />
         </template>
       </vxe-form-item>
-      <vxe-form-item title="性别" field="sex" :item-render="{}" v-show="false">
+      <vxe-form-item title="性别" field="sex" :item-render="{}" :folding="show" :visible="false">
         <template #default="{ data }">
           <vxe-select v-model="data.sex" placeholder="请选择性别" clearable>
             <vxe-option value="1" label="女" />
