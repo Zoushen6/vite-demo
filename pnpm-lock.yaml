@@ -34,6 +34,8 @@ specifiers:
   vue: ^3.2.41
   vue-router: '4'
   vue-tsc: ^1.0.9
+  vxe-table: ^4.3.11
+  xe-utils: ^3.5.7
 
 dependencies:
   ant-design-vue: 3.2.15_vue@3.2.45
@@ -42,6 +44,8 @@ dependencies:
   pinia: 2.0.28_mgnvym7yiazkylwwogi5r767ue
   vue: 3.2.45
   vue-router: 4.1.6_vue@3.2.45
+  vxe-table: 4.3.11_vue@3.2.45+xe-utils@3.5.7
+  xe-utils: 3.5.7
 
 devDependencies:
   '@commitlint/cli': 17.3.0
@@ -220,7 +224,7 @@ packages:
     dev: true
 
   /@commitlint/load/17.3.0:
-    resolution: {integrity: sha512-u/pV6rCAJrCUN+HylBHLzZ4qj1Ew3+eN9GBPhNi9otGxtOfA8b+8nJSxaNbcC23Ins/kcpjGf9zPSVW7628Umw==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/@commitlint/load/-/load-17.3.0.tgz}
+    resolution: {integrity: sha512-u/pV6rCAJrCUN+HylBHLzZ4qj1Ew3+eN9GBPhNi9otGxtOfA8b+8nJSxaNbcC23Ins/kcpjGf9zPSVW7628Umw==}
     engines: {node: '>=v14'}
     dependencies:
       '@commitlint/config-validator': 17.1.0
@@ -1570,8 +1574,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -3894,7 +3898,7 @@ packages:
     dev: true
 
   /ini/1.3.8:
-    resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/ini/-/ini-1.3.8.tgz}
+    resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
     dev: true
 
   /inquirer/6.5.2:
@@ -6055,7 +6059,7 @@ packages:
     dev: true
 
   /strict-uri-encode/1.1.0:
-    resolution: {integrity: sha512-R3f198pcvnB+5IpnBlRkphuE9n46WyVl8I39W/ZUTZLz4nqSP/oLYUrcnJrw462Ds8he4YKMov2efsTIw1BDGQ==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz}
+    resolution: {integrity: sha512-R3f198pcvnB+5IpnBlRkphuE9n46WyVl8I39W/ZUTZLz4nqSP/oLYUrcnJrw462Ds8he4YKMov2efsTIw1BDGQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -6099,7 +6103,7 @@ packages:
     dev: true
 
   /string_decoder/1.3.0:
-    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/string_decoder/-/string_decoder-1.3.0.tgz}
+    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
     dependencies:
       safe-buffer: 5.2.1
     dev: true
@@ -6820,6 +6824,16 @@ packages:
       '@vue/server-renderer': 3.2.45_vue@3.2.45
       '@vue/shared': 3.2.45
 
+  /vxe-table/4.3.11_vue@3.2.45+xe-utils@3.5.7:
+    resolution: {integrity: sha512-n2OXuUaKurVxxhRz0b1DojLdvtYwKkidRAqI9oGDw2IQ0y2IPs2Oq+lX2V6ar3glFdjjkS3BqnDBAk0elt6e0Q==}
+    peerDependencies:
+      vue: ^3.2.28
+      xe-utils: ^3.5.0
+    dependencies:
+      vue: 3.2.45
+      xe-utils: 3.5.7
+    dev: false
+
   /warning/4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
     dependencies:
@@ -6883,6 +6897,10 @@ packages:
   /wrappy/1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/wrappy/-/wrappy-1.0.2.tgz}
     dev: true
+
+  /xe-utils/3.5.7:
+    resolution: {integrity: sha512-3H+fDBKBR2wLJgyA7k9C/w1Xljx6Maml5ukV0WDY06HjYyGs2FEz6XhcwRCLIDXX4pBP3Gu0nX9DbCeuuRA2Ew==}
+    dev: false
 
   /xml-name-validator/4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==, registry: http://registry.npm.taobao.org/, tarball: http://registry.npm.taobao.org/xml-name-validator/-/xml-name-validator-4.0.0.tgz}
