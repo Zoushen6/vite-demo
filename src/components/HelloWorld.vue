@@ -1,42 +1,3 @@
-<script setup lang="ts">
-  import { ref, reactive } from "vue";
-  import { message } from "ant-design-vue";
-  import { testStore } from "@/store/testStore";
-  const store = testStore();
-
-  defineProps<{ msg: string }>();
-
-  const count = ref(0);
-  const array = [1, 2, 3];
-
-  console.log(array);
-  const ob = {
-    a: 1,
-    b: "aaa",
-    c: 123,
-  };
-
-  const testAnt = () => {
-    message.success("Test Message");
-    store.$patch({
-      id: "123456",
-      name: "zoushen",
-    });
-  };
-  const demo1 = reactive({
-    formData1: {
-      name: "",
-      nickname: "",
-      sex: "1",
-    },
-  });
-  const show = ref(true);
-  const searchEvent = () => {
-    show.value = false;
-  };
-  const resetEvent = () => {};
-</script>
-
 <template>
   <h1>{{ msg }}</h1>
 
@@ -99,6 +60,45 @@
     </vxe-form>
   </div>
 </template>
+
+<script setup lang="ts">
+  import { ref, reactive } from "vue";
+  import { message } from "ant-design-vue";
+  import { testStore } from "@/store/testStore";
+  const store = testStore();
+
+  defineProps<{ msg: string }>();
+
+  const count = ref(0);
+  const array = [1, 2, 3];
+
+  console.log(array);
+  const ob = {
+    a: 1,
+    b: "aaa",
+    c: 123,
+  };
+
+  const testAnt = () => {
+    message.success("Test Message");
+    store.$patch({
+      id: "123456",
+      name: "zoushen",
+    });
+  };
+  const demo1 = reactive({
+    formData1: {
+      name: "",
+      nickname: "",
+      sex: "1",
+    },
+  });
+  const show = ref(true);
+  const searchEvent = () => {
+    show.value = false;
+  };
+  const resetEvent = () => {};
+</script>
 
 <style scoped lang="less">
   .read-the-docs {
