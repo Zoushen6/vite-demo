@@ -4,8 +4,8 @@ import App from "./App.vue";
 import "ant-design-vue/dist/antd.css";
 import "@/assets/css/index.less";
 import router from "./router";
-import VXETable from 'vxe-table'
-import 'vxe-table/lib/style.css'
+import VXETable from "vxe-table";
+import "vxe-table/lib/style.css";
 const app = createApp(App);
 import { Button } from "ant-design-vue";
 

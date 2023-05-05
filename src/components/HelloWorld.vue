@@ -1,6 +1,4 @@
 <template>
-  <h1>{{ msg }}</h1>
-
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
@@ -66,8 +64,6 @@
   import { message } from "ant-design-vue";
   import { testStore } from "@/store/testStore";
   const store = testStore();
-
-  defineProps<{ msg: string }>();
 
   const count = ref(0);
   const array = [1, 2, 3];
