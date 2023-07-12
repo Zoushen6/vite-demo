@@ -1,14 +1,10 @@
 <template>
   <LayoutSider v-model:collapsed="collapsed" collapsible>
     <div class="logo"></div>
-    <Menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-      <MenuItem key="1">
+    <Menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @select="selectMenu">
+      <MenuItem v-for="item in asyncRoutes" :key="item.path">
         <component :is="PieChartOutlined" />
-        <span>Option 1</span>
-      </MenuItem>
-      <MenuItem key="2">
-        <desktop-outlined />
-        <span>Option 2</span>
+        <span>{{ item.name }}</span>
       </MenuItem>
       <SubMenu key="sub1">
         <template #title>
@@ -31,10 +27,6 @@
         <MenuItem key="6">Team 1</MenuItem>
         <MenuItem key="8">Team 2</MenuItem>
       </SubMenu>
-      <MenuItem key="9">
-        <file-outlined />
-        <span>File</span>
-      </MenuItem>
     </Menu>
   </LayoutSider>
 </template>
@@ -49,9 +41,15 @@
   } from "@ant-design/icons-vue";
   import { LayoutSider, Menu, MenuItem, SubMenu } from "ant-design-vue";
   import { ref } from "vue";
-
+  import { asyncRoutes } from "@/router/routes";
+  import { useRouter } from "vue-router";
+  const router = useRouter();
   const collapsed = ref<boolean>(false);
   const selectedKeys = ref<string[]>(["1"]);
+  const selectMenu = (item) => {
+    console.log(item);
+    router.push(item.key);
+  };
 </script>
 
 <style scoped lang="less">

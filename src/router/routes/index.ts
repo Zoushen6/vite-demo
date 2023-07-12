@@ -15,7 +15,6 @@ const routeModuleList: RouteRecordRaw[] = [];
 // 加入到路由集合中
 Object.keys(modules).forEach((key) => {
   const mod = modules[key] || {};
-  console.log(mod);
   const modList = Array.isArray(mod) ? [...mod] : [mod];
   routeModuleList.push(...modList);
 });

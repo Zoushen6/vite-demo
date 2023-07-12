@@ -1,13 +1,12 @@
 <template>
   <Layout>
     <LayoutHeader style="background: #fff; padding: 0" />
-    <LayoutContent style="margin: 0 16px">
-      <Breadcrumb style="margin: 16px 0">
-        <BreadcrumbItem>User</BreadcrumbItem>
-        <BreadcrumbItem>Bill</BreadcrumbItem>
-      </Breadcrumb>
+    <LayoutContent style="margin: 16px 16px">
+      <!--      <Breadcrumb style="margin: 16px 0">-->
+      <!--        <BreadcrumbItem>User</BreadcrumbItem>-->
+      <!--        <BreadcrumbItem>Bill</BreadcrumbItem>-->
+      <!--      </Breadcrumb>-->
       <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
-        Bill is a cat.
         <router-view />
       </div>
     </LayoutContent>
