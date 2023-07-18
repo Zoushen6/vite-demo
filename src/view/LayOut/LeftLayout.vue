@@ -43,11 +43,20 @@
   import { ref } from "vue";
   import { asyncRoutes } from "@/router/routes";
   import { useRouter } from "vue-router";
+  import { listenerRouteChange } from "@/router/menus";
   const router = useRouter();
   const collapsed = ref<boolean>(false);
-  const selectedKeys = ref<string[]>(["1"]);
+  const selectedKeys = ref<string[]>(["/home"]);
+  listenerRouteChange((route) => {
+    // console.log(route);
+    // let fullPath = route.fullPath?.substring(1, route.fullPath.length - 1);
+    let fullPath = route.fullPath.split("/");
+    fullPath.shift();
+    selectedKeys.value = fullPath.map((item) => "/" + item);
+  });
+
   const selectMenu = (item) => {
-    console.log(item);
+    // console.log(item);
     router.push(item.key);
   };
 </script>

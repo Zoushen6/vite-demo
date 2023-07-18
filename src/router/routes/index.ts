@@ -21,4 +21,4 @@ Object.keys(modules).forEach((key) => {
 
 export const asyncRoutes = routeModuleList;
 
-export const basicRoutes = [RootRoute, ...routeModuleList];
+export const basicRoutes = [...RootRoute, ...routeModuleList];

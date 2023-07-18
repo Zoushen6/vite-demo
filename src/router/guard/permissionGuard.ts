@@ -2,6 +2,7 @@
 import router from "@/router";
 import { testStore } from "@/store/testStore";
 import localCache from "@/utils/cache";
+import { setRouteChange } from "@/router/menus";
 //刷新时将vuex数据存到localstorage
 window.addEventListener("beforeunload", () => {
   const store = testStore();
@@ -15,4 +16,6 @@ router.beforeEach((to) => {
   const value = localCache.getCache("surveyInfo");
   if (value) store.setCurrentInfo(value.id, value.name);
   localCache.deleteCache("surveyInfo");
+
+  setRouteChange(to);
 });
