@@ -2,7 +2,7 @@
   <div>
     <div v-for="item in menuList" :key="item.path">
       <MenuItem v-if="!item.children" :key="item.path">
-        <!--        <component :is="PieChartOutlined" />-->
+        <component :is="PieChartOutlined" />
         <span>{{ item.name }}</span>
       </MenuItem>
       <SubMenu v-else :key="item.path">

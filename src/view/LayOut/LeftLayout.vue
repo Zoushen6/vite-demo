@@ -18,14 +18,14 @@
   import { LayoutSider, Menu, MenuItem, SubMenu } from "ant-design-vue";
   import { ref } from "vue";
   import { asyncRoutes } from "@/router/routes";
-
+  // console.log(asyncRoutes);
   import { useRouter } from "vue-router";
   import { listenerRouteChange } from "@/router/menus";
   import MenuTree from "@/view/components/MenuTree.vue";
   const router = useRouter();
   const collapsed = ref<boolean>(false);
   const selectedKeys = ref<string[]>(["/home"]);
-  const openKeys = ref<string[]>([]);
+  // const openKeys = ref<string[]>([]);
   listenerRouteChange((route) => {
     // console.log(route);
     // let fullPath = route.fullPath?.substring(1, route.fullPath.length - 1);
