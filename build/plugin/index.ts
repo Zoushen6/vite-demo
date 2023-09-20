@@ -7,8 +7,12 @@ import { configSvgIconsPlugin } from "./svgIcon";
 
 import { configImageminPlugin } from "./imagemin";
 
+import { configUnoCssPlugin } from "./unoCss";
+
+import { configVisualizerPlugin } from "./visualizer";
+
 export function createVitePlugins(isBuild: boolean, env: any) {
-  const { VITE_USE_IMAGEMIN } = env;
+  const { VITE_USE_IMAGEMIN, VITE_USE_VISUALIZER } = env;
 
   const vitePlugins: (PluginOption | PluginOption[])[] = [
     // have to
@@ -20,7 +24,11 @@ export function createVitePlugins(isBuild: boolean, env: any) {
 
   vitePlugins.push(configSvgIconsPlugin());
 
+  vitePlugins.push(configUnoCssPlugin());
+
   VITE_USE_IMAGEMIN === "true" && vitePlugins.push(configImageminPlugin());
+
+  VITE_USE_VISUALIZER === "true" && vitePlugins.push(configVisualizerPlugin());
 
   return vitePlugins;
 }
