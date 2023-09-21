@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
+    <p class="red">
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
@@ -60,9 +60,10 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, reactive } from "vue";
+  import { ref, reactive, watch } from "vue";
   import { message } from "ant-design-vue";
   import { testStore } from "@/store/testStore";
+  import { debounceFilter, useMouse } from "@vueuse/core";
   const store = testStore();
 
   const count = ref(0);
@@ -89,11 +90,11 @@
       sex: "1",
     },
   });
-  const show = ref(true);
-  const searchEvent = () => {
-    show.value = false;
-  };
-  const resetEvent = () => {};
+
+  const { x, y } = useMouse({ eventFilter: debounceFilter(100) });
+  watch([x, y], () => {
+    console.log(x.value, y.value);
+  });
 </script>
 
 <style scoped lang="less">

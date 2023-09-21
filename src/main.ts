@@ -6,6 +6,7 @@ import "@/assets/css/index.less";
 import router from "./router";
 // import VXETable from "vxe-table";
 import "vxe-table/lib/style.css";
+import "uno.css";
 const app = createApp(App);
 import { Button } from "ant-design-vue";
 // function useTable(app: App) {
